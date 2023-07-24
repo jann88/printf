@@ -21,6 +21,7 @@ int (*check_function(const char *format))(va_list)
 		{"S", print_custom_string},
 		{"p", print_pointer},
 		{"r", print_rev_string},
+		{"R", print_rot13},
 		{NULL, NULL}
 	};
 
