@@ -48,31 +48,27 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	while (format[i])
 	{
-		while (format[i] != '%' && format[i])
+		if (format[i] == '%')
 		{
-			_putchar(format[i]);
-			cprint++;
-			i++;
+			if (format[i + 1] == '%')
+			{
+				_putchar('%');
+				cprint++;
+				i += 2;
+				continue;
+			}
+			fptr = check_function(&format[i + 1]);
+			if (fptr != NULL)
+			{
+				cprint += fptr(args);
+				i += 2;
+				continue;
+			}
 		}
-		if (format[i] == '\0')
-			return (cprint);
-		fptr = check_function(&format[i + 1]);
-		if (fptr != NULL)
-		{
-			cprint += fptr(args);
-			i += 2;
-			continue;
-		}
-		if (!format[i + 1])
-			return (-1);
 
 		_putchar(format[i]);
 		cprint++;
-
-		if (format[i + 1] == '%')
-			i += 2;
-		else
-			i++;
+		i++;
 	}
 	va_end(args);
 	return (cprint);
