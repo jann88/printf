@@ -2,17 +2,18 @@
 /**
  * print_dec - a function that print %d
  * @d: integer to print
- * Return: zero on success
+ * Return: Always success
  */
 int print_dec(va_list d)
 {
-	int num, divisor, count, temp, digit;
+	int num, divisor, temp, digit, count = 0;
 
 	num = va_arg(d, int);
 	if (num < 0)
 	{
 		_putchar('-');
 		num = -num;
+		count++;
 	}
 	divisor = 1;
 	temp = num;
@@ -21,7 +22,6 @@ int print_dec(va_list d)
 		divisor *= 10;
 		temp /= 10;
 	}
-	count = 0;
 	while (divisor != 0)
 	{
 		digit = num / divisor;
