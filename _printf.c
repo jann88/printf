@@ -58,6 +58,16 @@ int _printf(const char *format, ...)
 		}
 		if (format[i] == '\0')
 			return (cprint);
+		if (format[i + 1] == ' ')
+		{
+			_putchar(format[i]);
+			cprint++;
+			i++;
+			continue;
+		}
+		if (format[i + 1] == '\0')
+			return (-1);
+
 		fptr = check_function(&format[i + 1]);
 		if (fptr != NULL)
 		{
@@ -65,13 +75,15 @@ int _printf(const char *format, ...)
 			i += 2;
 			continue;
 		}
-		if (!format[i + 1])
-			return (-1);
 		_putchar(format[i]);
 		cprint++;
-		if (format[i + 1] == '%')
-			i += 2;
-		else
+
+		if (format[i + 1] != 's' && format[i + 1] != 'c' &&
+				format[i + 1] != ' ' && format[i + 1] != '\0')
+		{
+			_putchar(format[i + 1]);
+			cprint++;
+		}
 			i++;
 	}
 	va_end(args);
