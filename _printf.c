@@ -20,6 +20,8 @@ int (*check_function(const char *format))(va_list)
 		{"X", print_hex_upper},
 		{"S", print_custom_string},
 		{"p", print_pointer},
+		{"r", print_rev_string},
+		{"R", print_rot13},
 		{NULL, NULL}
 	};
 
