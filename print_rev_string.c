@@ -1,7 +1,7 @@
 #include "main.h"
 /**
- * print_rev_string - a function that print reverse string
- * @str:string pointer
+ * print_rev_string - A function that print reverse string
+ * @r:string to reverse
  * Return:string reverse
  */
 int print_rev_string(va_list r)
@@ -14,7 +14,7 @@ int print_rev_string(va_list r)
 		str = ")lin(";
 	for (i = 0; str[i] != '\0'; i++)
 		;
-	for (i -= 1; i >=0; i--)
+	for (i -= 1; i >= 0; i--)
 	{
 		_putchar(str[i]);
 		count++;
