@@ -6,7 +6,7 @@
  */
 int print_dec(va_list d)
 {
-	int num, divisor, temp, digit, count = 0;
+	int num, divisor, digit, count = 0;
 
 	num = va_arg(d, int);
 	if (num < 0)
@@ -16,19 +16,23 @@ int print_dec(va_list d)
 		count++;
 	}
 	divisor = 1;
-	temp = num;
-	while (temp >= 10)
-	{
+	while (divisor <= num / 10)
 		divisor *= 10;
-		temp /= 10;
-	}
-	while (divisor != 0)
+	if (num == 0)
 	{
-		digit = num / divisor;
-		_putchar(digit + '0');
-		num %= divisor;
-		divisor /= 10;
+		_putchar('0');
 		count++;
+	}
+	else
+	{
+		while (divisor != 0)
+		{
+			digit = num / divisor;
+			_putchar(digit + '0');
+			num %= divisor;
+			divisor /= 10;
+			count++;
+		}
 	}
 	return (count);
 }
