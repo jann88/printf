@@ -48,14 +48,14 @@ int _printf(const char *format, ...)
 	if (format == NULL)
 		return (-1);
 	va_start(args, format);
-	while (format[i])
+	while (format[i] != '\0')/*iterates through the main string to print each char*/
 	{
-		while (format[i] != '%' && format[i])
+		while (format[i] != '%' && format[i]) /* checks format specifiers*/
 		{
 			_putchar(format[i]);
 			cprint++;
-			i++;
 		}
+		i++;
 		if (format[i] == '\0')
 			return (cprint);
 		fptr = check_function(&format[i + 1]);
