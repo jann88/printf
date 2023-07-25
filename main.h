@@ -27,6 +27,7 @@ int print_pointer(va_list p);
 int print_rev_string(va_list r);
 char rot13(char c);
 int print_rot13(va_list R);
+int printf_int(va_list val, Flags flags);
 /**
  * struct print_format -struct for the printf
  * @sp: specifiers
@@ -37,5 +38,16 @@ typedef struct print_format
 	char *sp;
 	int (*fptr)(va_list);
 } print_f;
+/**
+ * printf - flags
+ */
+typedef enum
+{
+	FLAG_MINUS = 1;
+	FLAG_PLUS = 2;
+	FLAG_ZERO = 4;
+	FLAG_HASH = 8;
+	FLAG_SPACE = 16;
+}flags;
 
 #endif

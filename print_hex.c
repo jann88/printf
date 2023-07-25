@@ -31,7 +31,7 @@ int print_hex_lower(va_list x)
  * @X:the integer print
  * Return: zero on success
  */
-int print_hex_upper(va_list X)
+int print_hex_upper(va_list X, Flags flags)
 {
 	int remainder;
 	unsigned int num = va_arg(X, unsigned int);
