@@ -25,6 +25,7 @@ int print_custom_string(va_list S);
 int print_pointer(va_list p);
 int printf_srev(va_list args);
 int _strlen(char *s);
+int _strlenc(const char *s);
 /**
  * struct print_format -struct for the printf
  * @sp: specifiers
