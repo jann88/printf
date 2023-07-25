@@ -31,6 +31,6 @@ int printf_srev(va_list args)
 	for (i = j - 1; i >= 0; i--)
 	{
 		_putchar(s[i]);
-		return (j);
 	}
+	return (j);
 }
