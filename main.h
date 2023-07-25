@@ -26,6 +26,7 @@ int print_pointer(va_list p);
 int printf_srev(va_list args);
 int _strlen(char *s);
 int _strlenc(const char *s);
+int printf_rot13(va_list args);
 /**
  * struct print_format -struct for the printf
  * @sp: specifiers
