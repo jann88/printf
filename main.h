@@ -11,6 +11,7 @@
 #define BUFFER_SIZE 1024
 
 int _putchar(char c);
+int _strlen(char *s);
 int _printf(const char *format, ...);
 int print_char(va_list a);
 int print_percent(__attribute__((unused))va_list args);
