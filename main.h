@@ -27,7 +27,7 @@ int printf_srev(va_list args);
 int _strlen(char *s);
 int _strlenc(const char *s);
 int printf_rot13(va_list args);
-int printf_int.c(va_list args);
+int printf_int(va_list args);
 int print_rev_string(va_list r);
 char rot13(char c);
 int print_rot13(va_list R);

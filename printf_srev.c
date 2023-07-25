@@ -33,4 +33,5 @@ int printf_srev(va_list args)
 		_putchar(s[i]);
 		return (j);
 	}
+	return (i);
 }
