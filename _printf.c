@@ -52,8 +52,8 @@ int _printf(const char *format, ...)
 		{
 			_putchar(format[i]);
 			cprint++;
+			i++;
 		}
-		i++;
 		if (format[i] == '\0')
 			return (cprint);
 		fptr = check_function(&format[i + 1]);

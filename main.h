@@ -23,11 +23,13 @@ int print_hex_lower(va_list x);
 int print_hex_upper(va_list X);
 int print_custom_string(va_list S);
 int print_pointer(va_list p);
-int printf_srev(va_list args);
-int _strlen(char *s);
-int _strlenc(const char *s);
-int printf_rot13(va_list args);
-int printf_int(va_list args);
+/*
+ * int printf_srev(va_list args);
+ * int _strlen(char *s);
+ * int _strlenc(const char *s)
+ * int printf_rot13(va_list args);
+ * int printf_int(va_list args);
+ */
 /**
  * struct print_format -struct for the printf
  * @sp: specifiers
