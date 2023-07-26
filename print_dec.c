@@ -6,8 +6,8 @@
  */
 int print_dec(va_list d)
 {
-	int num, divisor, digit, count = 0;
-	unsigned int abs_num;
+	int num, digit, count = 0;
+	unsigned int divisor, abs_num;
 
 	num = va_arg(d, int);
 	if (num < 0)
