@@ -9,7 +9,7 @@ int _pow(int base, int exp)
 {
 	int i, result = 1;
 
-	for (1 = 0, i < exp; i++)
+	for (i = 0; i < exp; i++)
 	{
 		result *= base;
 	}

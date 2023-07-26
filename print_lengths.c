@@ -16,7 +16,7 @@ int print_lengths(va_list lh)
 		}
 		else
 		{
-			return (print_lon_dec(lh));
+			return (print_long_dec(lh));
 		}
 	}
 	else if (format[0] == 'h')
