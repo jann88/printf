@@ -19,4 +19,16 @@ int print_lengths(va_list lh)
 			return (print_lon_dec(lh));
 		}
 	}
+	else if (format[0] == 'h')
+	{
+		if (format[1] == 'u')
+		{
+			return (print_ushort_dec(lh));
+		}
+		else
+		{
+			return (print_short_dec(lh));
+		}
+	}
+	return (0);
 }
