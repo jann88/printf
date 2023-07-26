@@ -8,7 +8,7 @@ int print_pointer(va_list p)
 {
 	uintptr_t address = (uintptr_t)va_arg(p, void *);
 	uintptr_t temp;
-	int i, hex_digit, num_digits;
+	int i, hex_digit, num_digits = 1;
 
 	_putchar('0');
 	_putchar('x');
@@ -18,7 +18,7 @@ int print_pointer(va_list p)
 	do {
 		temp >>= 4;
 		num_digits++;
-	} while (temp != 0);
+	} while (temp > 0);
 
 	for (i = num_digits - 1; i >= 0; i--)
 	{
@@ -27,5 +27,5 @@ int print_pointer(va_list p)
 				hex_digit - 10 + 'a');
 	}
 
-	return (num_digits + 2);
+	return (num_digits);
 }
