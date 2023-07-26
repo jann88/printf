@@ -1,5 +1,4 @@
 #include "main.h"
-#include <math.h>
 /**
  * print_short_dec - print decimal with h modifier
  * @d: number
@@ -8,7 +7,7 @@
 int print_short_dec(va_list d)
 {
 	int num = (short int)va_arg(d, int);
-	int i, digit, temp, num_digit, count = 0;
+	int i, temp, num_digit, digit, count = 0;
 
 	if (num == 0)
 	{
@@ -38,9 +37,9 @@ int print_short_dec(va_list d)
 	return (count);
 }
 /**
- * print_ushort_dec - print unsigned dec num with h modifier
- * @u: num to print
- * Return: success
+ * print_ushort_dec - print unsiged dec num with h modifier
+ * @u:num to print
+ * Return:success
  */
 int print_ushort_dec(va_list u)
 {
