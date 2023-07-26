@@ -9,7 +9,7 @@ int _pow(int base, int exp)
 {
 	int i, result = 1;
 
-	for (1 = 0, i < exp; i++)
+	for (i = 0; i < exp; i++)
 	{
 		result *= base;
 	}
@@ -22,7 +22,7 @@ int _pow(int base, int exp)
  */
 int print_long_dec(va_list d)
 {
-	long int temp, num = va_arg(d,long int);
+	long int temp, num = va_arg(d, long int);
 	int i, digit, num_digit, count = 0;
 
 	if (num < 0)

@@ -6,7 +6,7 @@
  */
 int print_lengths(va_list lh)
 {
-	const char *format = va_arg(lh, const char*);
+	const char *format = va_arg(lh, const char *);
 
 	if (format[0] == '1')
 	{
@@ -16,7 +16,7 @@ int print_lengths(va_list lh)
 		}
 		else
 		{
-			return (print_lon_dec(lh));
+			return (print_long_dec(lh));
 		}
 	}
 	else if (format[0] == 'h')
