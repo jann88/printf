@@ -22,6 +22,10 @@ int (*check_function(const char *format))(va_list)
 		{"p", print_pointer},
 		{"r", print_rev_string},
 		{"R", print_rot13},
+		{"l", print_lengths},
+		{"h", print_lengths},
+		{"i", print_zero_dec},
+		{"d", print_zero_dec},
 		{NULL, NULL}
 	};
 

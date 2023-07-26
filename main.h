@@ -29,6 +29,13 @@ int print_pointer(va_list p);
 int print_rev_string(va_list r);
 char rot13(char c);
 int print_rot13(va_list R);
+int print_zero_dec(va_list z);
+int _pow(int base, int exp);
+int print_long_dec(va_list d);
+int print_ulong_dec(va_list u);
+int print_short_dec(va_list d);
+int print_ushort_dec(va_list u);
+int print_lengths(va_list lh);
 /**
  * struct print_format -struct for the printf
  * @sp: specifiers
