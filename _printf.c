@@ -20,12 +20,6 @@ int (*check_function(const char *format))(va_list)
 		{"X", print_hex_upper},
 		{"S", print_custom_string},
 		{"p", print_pointer},
-		{"r", print_rev_string},
-		{"R", print_rot13},
-		{"l", print_lengths},
-		{"h", print_lengths},
-		{"i", print_zero_dec},
-		{"d", print_zero_dec},
 		{NULL, NULL}
 	};
 
@@ -51,9 +45,7 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 		return (-1);
-	va_start(args, format);
-
-	while (format[i])
+	while (format[i] != '\0')/*iterates through the main string to print each char*/
 	{
 		while (format[i] != '%' && format[i])
 		{

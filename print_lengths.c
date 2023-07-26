@@ -6,7 +6,7 @@
  */
 int print_lengths(va_list lh)
 {
-	const char *format = va_arg(lh, const char*);
+	const char *format = va_arg(lh, const char *);
 
 	if (format[0] == '1')
 	{
