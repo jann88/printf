@@ -48,6 +48,7 @@ int _printf(const char *format, ...)
 	if (format == NULL)
 		return (-1);
 	va_start(args, format);
+	/*flags = get_flags(format, &i);*/
 	while (format[i] != '\0')/*iterates through the main string to print each char*/
 	{
 		while (format[i] != '%' && format[i]) /* checks format specifiers*/
@@ -62,7 +63,7 @@ int _printf(const char *format, ...)
 		fptr = check_function(&format[i + 1]);
 		if (fptr != NULL)
 		{
-			cprint += fptr(args, flags);
+			cprint += fptr(args);
 			i += 2;
 			continue;
 		}
