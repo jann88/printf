@@ -13,14 +13,12 @@ int print_dec(va_list d)
 	if (num < 0)
 	{
 		_putchar('-');
-		abs_num = (num == INT_MIN) ? (size_t)INT_MAX + 1:
+		abs_num = (num == INT_MIN) ? (size_t)INT_MAX + 1 :
 			(size_t)(-num);
 		count++;
 	}
 	else
-	{
 		abs_num = (size_t)num;
-	}
 	divisor = 1;
 	temp = abs_num;
 	while (temp >= 10)
