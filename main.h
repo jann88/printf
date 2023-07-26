@@ -6,11 +6,14 @@
 #include <string.h>
 #include <stdarg.h>
 #include <unistd.h>
+#include <limits.h>
+#include <stddef.h>
 #include <stdint.h>
 
 #define BUFFER_SIZE 1024
 
 int _putchar(char c);
+int _strlen(char *s);
 int _printf(const char *format, ...);
 int print_char(va_list a);
 int print_percent(__attribute__((unused))va_list args);
@@ -23,13 +26,16 @@ int print_hex_lower(va_list x);
 int print_hex_upper(va_list X);
 int print_custom_string(va_list S);
 int print_pointer(va_list p);
-/*
- * int printf_srev(va_list args);
- * int _strlen(char *s);
- * int _strlenc(const char *s)
- * int printf_rot13(va_list args);
- * int printf_int(va_list args);
- */
+int print_rev_string(va_list r);
+char rot13(char c);
+int print_rot13(va_list R);
+int print_zero_dec(va_list z);
+int _pow(int base, int exp);
+int print_long_dec(va_list d);
+int print_ulong_dec(va_list u);
+int print_short_dec(va_list d);
+int print_ushort_dec(va_list u);
+int print_lengths(va_list lh);
 /**
  * struct print_format -struct for the printf
  * @sp: specifiers
@@ -40,5 +46,16 @@ typedef struct print_format
 	char *sp;
 	int (*fptr)(va_list);
 } print_f;
+/**
+ * printf - flags
+ */
+typedef enum
+{
+	FLAG_MINUS = 1,
+	FLAG_PLUS = 2,
+	FLAG_ZERO = 4,
+	FLAG_HASH = 8,
+	FLAG_SPACE = 16
+}Flags;
 
 #endif
