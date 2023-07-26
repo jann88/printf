@@ -6,32 +6,45 @@
  */
 int print_dec(va_list d)
 {
-	int num, divisor, digit, count = 0;
+	int num, digit, count = 0;
+	size_t i, temp, divisor, abs_num;
 
 	num = va_arg(d, int);
 	if (num < 0)
 	{
 		_putchar('-');
-		num = -num;
+		abs_num = (num == INT_MIN) ? (size_t)INT_MAX + 1:
+			(size_t)(-num);
 		count++;
 	}
+	else
+	{
+		abs_num = (size_t)num;
+	}
 	divisor = 1;
-	while (divisor <= num / 10)
-		divisor *= 10;
-	if (num == 0)
+	temp = abs_num;
+	while (temp >= 10)
+	{
+		temp /= 10;
+		divisor++;
+	}
+	if (abs_num == 0)
 	{
 		_putchar('0');
 		count++;
 	}
 	else
 	{
-		while (divisor != 0)
+		while (divisor > 0)
 		{
-			digit = num / divisor;
+			temp = abs_num;
+			for (i = 1; i < divisor; i++)
+				temp /= 10;
+
+			digit = temp % 10;
 			_putchar(digit + '0');
-			num %= divisor;
-			divisor /= 10;
 			count++;
+			divisor--;
 		}
 	}
 	return (count);
