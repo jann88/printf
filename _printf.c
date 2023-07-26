@@ -60,7 +60,6 @@ int _printf(const char *format, ...)
 			_putchar(format[i]);
 			cprint++;
 			i++;
-			
 		}
 		if (format[i] == '\0')
 			return (cprint);
