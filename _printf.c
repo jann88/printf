@@ -47,12 +47,12 @@ int _printf(const char *format, ...)
 		return (-1);
 	while (format[i] != '\0')/*iterates through the main string to print each char*/
 	{
-		while (format[i] != '%' && format[i]) /* checks format specifiers*/
+		while (format[i] != '%' && format[i])
 		{
 			_putchar(format[i]);
 			cprint++;
+			i++;
 		}
-		i++;
 		if (format[i] == '\0')
 			return (cprint);
 		fptr = check_function(&format[i + 1]);
