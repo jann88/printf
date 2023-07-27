@@ -24,8 +24,7 @@ int (*check_function(const char *format))(va_list)
 		{"R", print_rot13},
 		{"l", print_lengths},
 		{"h", print_lengths},
-		{"i", print_zero_dec},
-		{"d", print_zero_dec},
+		{"args", print_flag},
 		{NULL, NULL}
 	};
 

@@ -12,6 +12,11 @@
 #include <stdint.h>
 
 #define BUFFER_SIZE 1024
+#define MINUS 1
+#define PLUS 2
+#define ZERO 4
+#define HASH 8
+#define SPACE 16
 
 int _putchar(char c);
 int _strlen(char *s);
@@ -37,6 +42,7 @@ int print_ulong_dec(va_list u);
 int print_short_dec(va_list d);
 int print_ushort_dec(va_list u);
 int print_lengths(va_list lh);
+int print_flag(va_list args);
 /**
  * struct print_format -struct for the printf
  * @sp: specifiers
